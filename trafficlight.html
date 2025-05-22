@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 250px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <input type="text" id="color" placeholder="type traffic light color...."/>
+    <button onclick="message()">Check</button>
+
+    <p id="output"></p>
+
+    <script>
+
+        function message(){
+            let userinput;
+         userinput=document.getElementById("color").value;
+            if(userinput == "red"){
+                output="STOP  🛑";
+            }
+            else if(userinput == "yellow"){
+                output="Ready  🟡";
+            }
+            else if(userinput == "green"){
+                output="Go 🟢";
+            }
+            else{
+                output="INVALID COLOR";
+            }
+
+            document.getElementById("output").innerHTML=output;
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Comparison</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            width: 200px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e3a8a;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Please Enter Two Numbers</h1>
+
+    <input type="number" id="firstNum" placeholder="Enter first number">
+    <input type="number" id="secNum" placeholder="Enter second number">
+    <button onclick="compareNum()">Compare</button>
+
+    <p id="output"></p>
+
+    <script>
+        function compareNum() {
+            let fNum = parseFloat(document.getElementById("firstNum").value);
+            let sNum = parseFloat(document.getElementById("secNum").value);
+            let output = "";
+
+            if (isNaN(fNum) || isNaN(sNum)) {
+                output = "Please enter valid numbers.";
+            } else if (fNum > sNum) {
+                output = "First number is greater than second number.";
+            } else if (sNum > fNum) {
+                output = "Second number is greater than first number.";
+            } else {
+                output = "Both numbers are equal.";
+            }
+
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voting Eligibility</title>
+    <style>
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            width: 250px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e3a8a;
+            text-align: center;
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+    <input type="number" id="age" placeholder="Enter your age...."/>
+    <input type="text" id="nationality" placeholder="Enter your nationality...."/>
+    <button onclick="checkVote()">Check Voting Eligibility</button>
+
+    <p id="output"></p>
+
+
+    <script>
+
+        function checkVote(){
+            let age,nationality;
+            age=document.getElementById("age").value;
+            nationality=document.getElementById("nationality").value;
+            if(age > 18 && nationality == "pakistani"){
+                output="You can vote🗳️";
+
+            }
+            else{
+                output="You cannot vote ❌";
+            }
+
+             document.getElementById("output").innerHTML=output;
+        }
+
+       
+
+
+
+    </script>
+     
+</body>
+</html>
